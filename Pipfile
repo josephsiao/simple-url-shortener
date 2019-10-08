@@ -10,6 +10,7 @@ flake8 = "*"
 [packages]
 validators = "*"
 flask = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.6"

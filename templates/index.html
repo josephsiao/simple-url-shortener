@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <title>Short URL Generator</title>
+    <body>
+        <div>
+            <form method='post' action={{ url_for('home') }}>
+                Enter URL:<br>
+                <input type='text' name='url' value='https://www.google.com/'><br>
+                <button type='submit'>Submit</button>
+                </form>
+        </div>
+    </body>
+</html>

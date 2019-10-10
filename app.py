@@ -21,6 +21,7 @@ POSTGRE_DB = PostgreDB(DB)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    """Home paage."""
     if request.method == 'POST':
         url = request.values['url'].strip()
         short_url = POSTGRE_DB.check_data_exist(original=url)
@@ -40,6 +41,7 @@ def home():
 
 @app.route('/<url>')
 def url_redirect(url):
+    """Redirect to origin URL."""
     result = POSTGRE_DB.check_data_exist(shorten=url)
     if result:
         return redirect(result)

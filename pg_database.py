@@ -2,10 +2,12 @@ import psycopg2
 
 
 class PostgreDB():
+    """Interact with PostgreSQL database."""
     def __init__(self, database_config):
         self.database_config = database_config
 
     def add_data(self, data):
+        """Add a data to database."""
         try:
             conn = psycopg2.connect(**self.database_config)
             cur = conn.cursor()
@@ -20,6 +22,7 @@ class PostgreDB():
             conn.close()
 
     def check_data_exist(self, shorten=None, original=None):
+        """Check data if already in database or not."""
         try:
             conn = psycopg2.connect(**self.database_config)
             cur = conn.cursor()
@@ -44,6 +47,7 @@ class PostgreDB():
             conn.close()
 
     def create_table(self):
+        """Create table in database."""
         try:
             conn = psycopg2.connect(**self.database_config)
             cur = conn.cursor()
